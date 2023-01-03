@@ -24,8 +24,8 @@ namespace McVersionsLib.Forge
         /// <summary>
         /// Retreive all available Minecraft Forge versions from the official project's website
         /// </summary>
-        /// <returns>Deserialized Forge versions json</returns>
-        /// <exception cref="WebException">Cannot retreive Forge versions data</exception>
+        /// <returns>Deserialized Forge versions json with minecraft version as key (<c>string</c>), and list of all minecraft forge version for this minecraft version (List of <c>string</c>)</returns>
+        /// <exception cref="WebException">Cannot retrieve Forge versions data</exception>
         public static Dictionary<string, List<string>> RetrieveAllAvailableMinecraftForgeVersionsData()
         {
             using(WebClient webClient = new WebClient())
@@ -43,7 +43,7 @@ namespace McVersionsLib.Forge
         /// Retreive promoted Minecraft Forge versions from the official project's website
         /// </summary>
         /// <returns>Deserialized Forge promoted versions json</returns>
-        /// <exception cref="WebException">Cannot retreive Forge versions data</exception>
+        /// <exception cref="WebException">Cannot retrieve Forge versions data</exception>
         public static ForgePromotionsJson RetrievePromotedMinecraftForgeVersionsData()
         {
             using (WebClient webClient = new WebClient())

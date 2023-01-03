@@ -51,12 +51,35 @@ namespace McVersionsLib.Test.Forge
         }
         #endregion
 
-        #region GetRecommendedForgeVersion
+        #region GetRecommendedMinecraftForgeVersion
         [TestMethod]
-        public void GetRecommendedForgeVersionTest1132()
+        public void GetRecommendedMinecraftForgeVersionTest1132()
         {
-            string recommendedVersion = McForgeVersions.GetRecommendedForgeVersion("1.13.2");
+            string recommendedVersion = McForgeVersions.GetRecommendedMinecraftForgeVersion("1.13.2");
             Assert.IsTrue(string.IsNullOrEmpty(recommendedVersion));
+        }
+
+        [TestMethod]
+        public void GetRecommendedMinecraftForgeVersionTest1165()
+        {
+            string recommendedVersion = McForgeVersions.GetRecommendedMinecraftForgeVersion("1.16.5");
+            Assert.IsFalse(string.IsNullOrEmpty(recommendedVersion));
+        }
+        #endregion
+
+        #region GetLatestMinecraftForgeVersion
+        [TestMethod]
+        public void GetLatestMinecraftForgeVersionTest113()
+        {
+            string recommendedVersion = McForgeVersions.GetLatestMinecraftForgeVersion("1.13");
+            Assert.IsTrue(string.IsNullOrEmpty(recommendedVersion));
+        }
+
+        [TestMethod]
+        public void GetLatestMinecraftForgeVersionTest1193()
+        {
+            string recommendedVersion = McForgeVersions.GetLatestMinecraftForgeVersion("1.19.3");
+            Assert.IsFalse(string.IsNullOrEmpty(recommendedVersion));
         }
         #endregion
     }
