@@ -5,10 +5,10 @@ using System.Text;
 
 namespace McVersionsLib.Forge
 {
-    public class ForgePromotionsJson
+    public class McForgePromotionsJson
     {
         /// <summary>
-        /// MInecraft Forge project's homepage
+        /// Minecraft Forge project's homepage
         /// </summary>
         [JsonProperty("homepage")]
         public string Homepage { get; set; }

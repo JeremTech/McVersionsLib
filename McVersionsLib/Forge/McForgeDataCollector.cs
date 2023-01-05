@@ -44,14 +44,14 @@ namespace McVersionsLib.Forge
         /// </summary>
         /// <returns>Deserialized Forge promoted versions json</returns>
         /// <exception cref="WebException">Cannot retrieve Forge versions data</exception>
-        public static ForgePromotionsJson RetrievePromotedMinecraftForgeVersionsData()
+        public static McForgePromotionsJson RetrievePromotedMinecraftForgeVersionsData()
         {
             using (WebClient webClient = new WebClient())
             {
                 string jsonRawContent = webClient.DownloadString(promotionsUrl);
 
                 if (!string.IsNullOrEmpty(jsonRawContent))
-                    return JsonConvert.DeserializeObject<ForgePromotionsJson>(jsonRawContent);
+                    return JsonConvert.DeserializeObject<McForgePromotionsJson>(jsonRawContent);
 
                 throw new WebException("Cannot retreive promoted Forge versions data. Please check your Internet connection.");
             }

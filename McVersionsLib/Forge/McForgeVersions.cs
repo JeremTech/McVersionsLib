@@ -15,7 +15,7 @@ namespace McVersionsLib.Forge
         /// <summary>
         /// Minecraft Forge promoted versions data
         /// </summary>
-        private static ForgePromotionsJson ForgePromotionsData { get; set; }
+        private static McForgePromotionsJson ForgePromotionsData { get; set; }
 
         /// <summary>
         /// Minecraft Forge available version data

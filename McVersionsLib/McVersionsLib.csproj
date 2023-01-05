@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Fabric\" />
     <Folder Include="Minecraft\" />
   </ItemGroup>
 
