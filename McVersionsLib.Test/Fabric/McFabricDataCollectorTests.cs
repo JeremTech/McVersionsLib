@@ -22,5 +22,13 @@ namespace McVersionsLib.Test.Fabric
             Assert.IsNotNull(data);
             Assert.IsTrue(data.Count > 0);
         }
+
+        [TestMethod]
+        public void RetrieveFabricLoaderVersionsDataTest()
+        {
+            var data = McFabricDataCollector.RetrieveFabricLoaderVersionsData();
+            Assert.IsNotNull(data);
+            Assert.IsTrue(data.Count > 0);
+        }
     }
 }

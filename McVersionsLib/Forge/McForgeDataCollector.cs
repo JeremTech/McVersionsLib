@@ -22,7 +22,7 @@ namespace McVersionsLib.Forge
         private static readonly string versionsUrl = "https://files.minecraftforge.net/maven/net/minecraftforge/forge/maven-metadata.json";
 
         /// <summary>
-        /// Retreive all available Minecraft Forge versions from the official project's website
+        /// Retrieve all available Minecraft Forge versions from the official project's website
         /// </summary>
         /// <returns>Deserialized Forge versions json with minecraft version as key (<c>string</c>), and list of all minecraft forge version for this minecraft version (List of <c>string</c>)</returns>
         /// <exception cref="WebException">Cannot retrieve Forge versions data</exception>
@@ -35,12 +35,12 @@ namespace McVersionsLib.Forge
                 if(!string.IsNullOrEmpty(jsonRawContent))
                     return JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(jsonRawContent);
 
-                throw new WebException("Cannot retreive available Forge versions data. Please check your Internet connection.");
+                throw new WebException("Cannot retrieve available Forge versions data. Please check your Internet connection.");
             }
         }
 
         /// <summary>
-        /// Retreive promoted Minecraft Forge versions from the official project's website
+        /// Retrieve promoted Minecraft Forge versions from the official project's website
         /// </summary>
         /// <returns>Deserialized Forge promoted versions json</returns>
         /// <exception cref="WebException">Cannot retrieve Forge versions data</exception>
@@ -53,7 +53,7 @@ namespace McVersionsLib.Forge
                 if (!string.IsNullOrEmpty(jsonRawContent))
                     return JsonConvert.DeserializeObject<McForgePromotionsJson>(jsonRawContent);
 
-                throw new WebException("Cannot retreive promoted Forge versions data. Please check your Internet connection.");
+                throw new WebException("Cannot retrieve promoted Forge versions data. Please check your Internet connection.");
             }
         }
     }

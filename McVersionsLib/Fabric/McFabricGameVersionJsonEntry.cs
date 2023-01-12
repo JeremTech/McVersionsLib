@@ -17,6 +17,6 @@ namespace McVersionsLib.Fabric
         /// Is game version stable ?
         /// </summary>
         [JsonProperty("stable")]
-        public string Stable { get; set; }
+        public bool Stable { get; set; }
     }
 }

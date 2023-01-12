@@ -23,9 +23,9 @@ namespace McVersionsLib.Test.Forge
         }
         #endregion
 
-        #region BuildMinecraftForgeMDKDownloadLink
+        #region BuildMinecraftForgeInstallerLink
         [TestMethod]
-        public void BuildMinecraftForgeInstallerLink()
+        public void BuildMinecraftForgeInstallerLinkTest()
         {
             string excepted = "https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.19.2-43.1.47/forge-1.19.2-43.1.47-installer.jar";
             Assert.AreEqual(excepted, McForgeUtils.BuildMinecraftForgeInstallerLink("1.19.2-43.1.47"));
