@@ -80,6 +80,19 @@ namespace McVersionsLib.Test.Fabric
         {
             Assert.IsNotNull(McFabricVersions.GetAllLoaderVersions());
         }
+
+        [TestMethod]
+        public void GetAllLoaderVersionsSpecificMinecraftVersionTestNotNull()
+        {
+            Assert.IsNotNull(McFabricVersions.GetAllLoaderVersions("1.19.3"));
+        }
+
+        [TestMethod]
+        public void GetAllLoaderVersionsSpecificMinecraftVersionTestContainsVersion()
+        {
+            var versionsData = McFabricVersions.GetAllLoaderVersions("1.19.3");
+            Assert.IsTrue(versionsData.Contains("0.14.13"));
+        }
         #endregion
     }
 }

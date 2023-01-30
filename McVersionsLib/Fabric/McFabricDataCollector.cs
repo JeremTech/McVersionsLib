@@ -56,5 +56,24 @@ namespace McVersionsLib.Fabric
                 throw new WebException("Cannot retrieve available Fabric loader versions data. Please check your Internet connection.");
             }
         }
+
+        /// <summary>
+        /// Retrieve Fabric versions details about one Minecraft version
+        /// </summary>
+        /// <param name="mcVersion">Targeted Minecraft version</param>
+        /// <returns>List of Fabric's loader </returns>
+        /// <exception cref="WebException"></exception>
+        public static List<McFabricVersionDetailJsonEntry> RetrieveFabricVersionsDetailsData(string mcVersion)
+        {
+            using (WebClient webClient = new WebClient())
+            {
+                string jsonRawContent = webClient.DownloadString(string.Concat(loaderVersionsUrl, mcVersion));
+
+                if (!string.IsNullOrEmpty(jsonRawContent))
+                    return JsonConvert.DeserializeObject<List<McFabricVersionDetailJsonEntry>>(jsonRawContent);
+
+                throw new WebException("Cannot retrieve Fabric versions data. Please check your Internet connection.");
+            }
+        }
     }
 }

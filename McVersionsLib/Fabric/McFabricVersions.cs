@@ -1,4 +1,5 @@
-﻿using McVersionsLib.Forge;
+﻿using McVersionsLib.Core;
+using McVersionsLib.Forge;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -123,6 +124,33 @@ namespace McVersionsLib.Fabric
             }
 
             result.AddRange(FabricLoaderVersionsData.Select(v => v.Version));
+            return result;
+        }
+
+        /// <summary>
+        /// Return all Fabric's loader versions for a specific Minecraft version
+        /// </summary>
+        /// <param name="targetedMcVersion">Targeted Minecraft version</param>
+        /// <returns>List of all Fabric's loader version for the targetted minecraft version</returns>
+        /// <exception cref="WebException">Cannot retrieve Fabric versions data</exception>
+        public static List<string> GetAllLoaderVersions(string targetedMcVersion)
+        {
+            List<string> result = new List<string>();
+
+            try
+            {
+                List<McFabricVersionDetailJsonEntry> versionsData = McFabricDataCollector.RetrieveFabricVersionsDetailsData(targetedMcVersion);
+
+                if (versionsData == null || versionsData.Count == 0)
+                    throw new VersionNotFoundException(string.Format("There are no available Fabric versions for Minecraft {0}", targetedMcVersion));
+
+                result.AddRange(versionsData.Select(v => v.LoaderData.Version));
+            }
+            catch (WebException e)
+            {
+                throw e;
+            }
+
             return result;
         }
     }
