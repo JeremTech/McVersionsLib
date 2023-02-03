@@ -1,4 +1,5 @@
-﻿using McVersionsLib.Fabric;
+﻿using McVersionsLib.Core;
+using McVersionsLib.Fabric;
 using McVersionsLib.Forge;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -82,6 +83,13 @@ namespace McVersionsLib.Test.Fabric
         }
 
         [TestMethod]
+        [ExpectedException(typeof(VersionNotFoundException))]
+        public void GetAllLoaderVersionsSpecificMinecraftVersionTestMinecraftVersionNotFound()
+        {
+            McFabricVersions.GetAllLoaderVersions("1.17.5");
+        }
+
+        [TestMethod]
         public void GetAllLoaderVersionsSpecificMinecraftVersionTestNotNull()
         {
             Assert.IsNotNull(McFabricVersions.GetAllLoaderVersions("1.19.3"));
@@ -92,6 +100,29 @@ namespace McVersionsLib.Test.Fabric
         {
             var versionsData = McFabricVersions.GetAllLoaderVersions("1.19.3");
             Assert.IsTrue(versionsData.Contains("0.14.13"));
+        }
+        #endregion
+
+        #region GetLoaderAndMappingsDetails
+        [TestMethod]
+        [ExpectedException(typeof(VersionNotFoundException))]
+        public void GetLoaderAndMappingsDetailsTestMinecraftVersionNotFound()
+        {
+            McFabricVersions.GetLoaderAndMappingsDetails("1.18.7", "0.14.13");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(VersionNotFoundException))]
+        public void GetLoaderAndMappingsDetailsTestLoaderVersionNotFound()
+        {
+            McFabricVersions.GetLoaderAndMappingsDetails("1.19.3", "6.14.13");
+        }
+
+        [TestMethod]
+        public void GetLoaderAndMappingsDetailsTestContainsVersion()
+        {
+            var versionDetails = McFabricVersions.GetLoaderAndMappingsDetails("1.19.3", "0.14.13");
+            Assert.IsNotNull(versionDetails);
         }
         #endregion
     }

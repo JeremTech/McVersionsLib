@@ -104,14 +104,13 @@ namespace McVersionsLib.Fabric
         /// <summary>
         /// Return all Fabric's loader versions
         /// </summary>
-        /// <param name="forceRetrievingData">Force retrieving data from Fabric official website</param>
         /// <returns>List of all Fabric's loader version</returns>
         /// <exception cref="WebException">Cannot retrieve Fabric versions data</exception>
-        public static List<string> GetAllLoaderVersions(bool forceRetrievingData = false) 
+        public static List<string> GetAllLoaderVersions() 
         {
             List<string> result = new List<string>();
 
-            if (FabricLoaderVersionsData == null || FabricLoaderVersionsData.Count == 0 || forceRetrievingData)
+            if (FabricLoaderVersionsData == null || FabricLoaderVersionsData.Count == 0)
             {
                 try
                 {
@@ -133,6 +132,7 @@ namespace McVersionsLib.Fabric
         /// <param name="targetedMcVersion">Targeted Minecraft version</param>
         /// <returns>List of all Fabric's loader version for the targetted minecraft version</returns>
         /// <exception cref="WebException">Cannot retrieve Fabric versions data</exception>
+        /// <exception cref="VersionNotFoundException">No available Fabric versions for the targeted Minecraft</exception>
         public static List<string> GetAllLoaderVersions(string targetedMcVersion)
         {
             List<string> result = new List<string>();
@@ -145,6 +145,40 @@ namespace McVersionsLib.Fabric
                     throw new VersionNotFoundException(string.Format("There are no available Fabric versions for Minecraft {0}", targetedMcVersion));
 
                 result.AddRange(versionsData.Select(v => v.LoaderData.Version));
+            }
+            catch (WebException e)
+            {
+                throw e;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Return loader and mappings details for a specific Minecraft and loader version
+        /// </summary>
+        /// <param name="targetedMcVersion">Targeted Minecraft version</param>
+        /// <param name="targetedLoaderVersion">Targeted loader version</param>
+        /// <returns></returns>
+        /// <exception cref="VersionNotFoundException">No available Fabric versions for the targeted Minecraft</exception>
+        /// <exception cref="VersionNotFoundException">The targeted loader version for the targeted Minecraft was not found</exception>
+        public static McFabricVersionDetailJsonEntry GetLoaderAndMappingsDetails(string targetedMcVersion, string targetedLoaderVersion)
+        {
+            McFabricVersionDetailJsonEntry result;
+
+            try
+            {
+                List<McFabricVersionDetailJsonEntry> versionsData = McFabricDataCollector.RetrieveFabricVersionsDetailsData(targetedMcVersion);
+
+                if (versionsData == null || versionsData.Count == 0)
+                    throw new VersionNotFoundException(string.Format("There are no available Fabric versions for Minecraft {0}", targetedMcVersion));
+
+                McFabricVersionDetailJsonEntry targetedDetails = versionsData.FirstOrDefault(d => d.LoaderData.Version == targetedLoaderVersion);
+
+                if(targetedDetails == null)
+                    throw new VersionNotFoundException(string.Format("No loader version {0} for Minecraft {1} found", targetedLoaderVersion, targetedMcVersion));
+
+                result = targetedDetails;
             }
             catch (WebException e)
             {
