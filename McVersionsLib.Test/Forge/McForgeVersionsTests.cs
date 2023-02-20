@@ -19,13 +19,13 @@ namespace McVersionsLib.Test.Forge
         [TestMethod]
         public void GetAllSupportedMinecraftVersionTestNotNull()
         {
-            Assert.IsNotNull(McForgeVersions.GetAllSupportedMinecraftVersion());
+            Assert.IsNotNull(McForgeVersions.GetAllSupportedMinecraftVersions());
         }
 
         [TestMethod]
         public void GetAllSupportedMinecraftVersionTest1192VersionExists()
         {
-            List<string> supportedVersions = McForgeVersions.GetAllSupportedMinecraftVersion();
+            List<string> supportedVersions = McForgeVersions.GetAllSupportedMinecraftVersions();
             Assert.IsNotNull(supportedVersions.FirstOrDefault(v => v.Equals("1.19.2")));
         }
         #endregion

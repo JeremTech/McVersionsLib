@@ -1,10 +1,7 @@
-﻿using McVersionsLib.Core;
-using McVersionsLib.Forge;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
+using McVersionsLib.Core;
 
 namespace McVersionsLib.Fabric
 {
@@ -160,6 +157,7 @@ namespace McVersionsLib.Fabric
         /// <param name="targetedMcVersion">Targeted Minecraft version</param>
         /// <param name="targetedLoaderVersion">Targeted loader version</param>
         /// <returns></returns>
+        /// <exception cref="WebException">Cannot retrieve Fabric versions data</exception>
         /// <exception cref="VersionNotFoundException">No available Fabric versions for the targeted Minecraft</exception>
         /// <exception cref="VersionNotFoundException">The targeted loader version for the targeted Minecraft was not found</exception>
         public static McFabricVersionDetailJsonEntry GetLoaderAndMappingsDetails(string targetedMcVersion, string targetedLoaderVersion)

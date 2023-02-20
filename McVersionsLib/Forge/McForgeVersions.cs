@@ -1,9 +1,6 @@
-﻿using McVersionsLib.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Net;
-using System.Text;
+using McVersionsLib.Core;
 
 namespace McVersionsLib.Forge
 {
@@ -28,7 +25,7 @@ namespace McVersionsLib.Forge
         /// <param name="forceRetrievingData">Force retrieving data from Forge official website</param>
         /// <returns>List of all Minecraft versions supported by Minecraft Forge</returns>
         /// <exception cref="WebException">Cannot retrieve Forge versions data</exception>
-        public static List<string> GetAllSupportedMinecraftVersion(bool forceRetrievingData = false)
+        public static List<string> GetAllSupportedMinecraftVersions(bool forceRetrievingData = false)
         {
             List<string> result = new List<string>();
 

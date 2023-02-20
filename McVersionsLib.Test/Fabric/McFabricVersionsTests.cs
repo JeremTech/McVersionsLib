@@ -1,12 +1,6 @@
 ﻿using McVersionsLib.Core;
 using McVersionsLib.Fabric;
-using McVersionsLib.Forge;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace McVersionsLib.Test.Fabric
 {

@@ -1,11 +1,5 @@
-﻿using McVersionsLib.Forge;
-using McVersionsLib.Minecraft;
+﻿using McVersionsLib.Minecraft;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace McVersionsLib.Test.Minecraft
 {

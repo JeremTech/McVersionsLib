@@ -3,11 +3,11 @@
 Find all features provided by McVersionsLib to retrieve **Minecraft Forge** modding API data.
 
 ## Retrieve all supported Minecraft versions
-To retrieve all supported Minecraft versions, you can call `GetAllSupportedMinecraftVersion` function from the `McForgeVersions` class.
+To retrieve all supported Minecraft versions, you can call `GetAllSupportedMinecraftVersions` function from the `McForgeVersions` class.
 This function returns all supported Minecraft versions by Minecraft Forge.
 
 ```c#
-List<string> supportedMcVersions = McForgeVersions.GetAllSupportedMinecraftVersion();
+List<string> supportedMcVersions = McForgeVersions.GetAllSupportedMinecraftVersions();
 ```
 
 #### Arguments :
