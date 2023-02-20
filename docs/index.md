@@ -1,5 +1,5 @@
 
-# <img src="/icon.png" width="50" height="50"> McVersionsLib - Documentation
+# <img src="mcversionslib_logo.png" width="50" height="50"> McVersionsLib - Documentation
 
 Welcome to the McVersionsLib documentation !
 
