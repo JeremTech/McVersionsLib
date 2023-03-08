@@ -12,7 +12,7 @@
     <RepositoryUrl>https://github.com/JeremTech/McVersionsLib</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Minecraft; Versions; Forge, Fabric; API; Mod</PackageTags>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
