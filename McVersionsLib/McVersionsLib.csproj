@@ -15,6 +15,7 @@
     <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Version>1.0.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
