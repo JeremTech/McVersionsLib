@@ -6,16 +6,16 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>McVersionsLib</Title>
     <Authors>Jerem_Tech</Authors>
-    <Description>Provide Minecraft, Fabric and Minecraft Forge versions data.</Description>
-    <Copyright></Copyright>
-    <PackageProjectUrl></PackageProjectUrl>
+    <Description>Provide Minecraft, Fabric, Minecraft Forge and NeoForge versions data.</Description>
+    <Copyright>JeremTech</Copyright>
+    <PackageProjectUrl>https://jeremtech.github.io/McVersionsLib/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/JeremTech/McVersionsLib</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Minecraft; Versions; Forge, Fabric; API; Mod</PackageTags>
     <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Version>1.0.0.1</Version>
+    <Version>1.1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
