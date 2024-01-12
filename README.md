@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/github/license/jeremtech/McVersionsLib?label=License&style=flat-square)](https://github.com/JeremTech/McVersionsLib/blob/master/LICENSE)
 
 # Description
-.Net library which provides Minecraft, Fabric and Minecraft Forge versions data.
+.Net library which provides Minecraft, Fabric, NeoForge and Minecraft Forge versions data.
 
 ## Documentation
 You can find documentation [here](https://jeremtech.github.io/McVersionsLib/).
