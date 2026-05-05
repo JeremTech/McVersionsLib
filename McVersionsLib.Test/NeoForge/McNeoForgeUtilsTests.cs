@@ -1,10 +1,5 @@
 ﻿using McVersionsLib.NeoForge;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace McVersionsLib.Test.NeoForge
 {
@@ -24,6 +19,12 @@ namespace McVersionsLib.Test.NeoForge
         public void GetNeoForgeVersionFromMinecraftVersionMajorMcVersionTest()
         {
             Assert.AreEqual("20.0", McNeoForgeUtils.GetNeoForgeVersionFromMinecraftVersion("1.20"));
+        }
+
+        [TestMethod]
+        public void GetNeoForgeVersionFromMinecraftVersionNewVersioningSystemTest()
+        {
+            Assert.AreEqual("26.1", McNeoForgeUtils.GetNeoForgeVersionFromMinecraftVersion("26.1"));
         }
     }
 }

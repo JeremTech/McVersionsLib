@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace McVersionsLib.NeoForge
 {
@@ -19,6 +18,12 @@ namespace McVersionsLib.NeoForge
         {
             List<string> mcVersionSplit = mcVersion.Split('.').ToList();
 
+            // For new Minecraft versioning system, NeoForge version is the same as Minecraft version
+            if (!string.Equals(mcVersionSplit.ElementAtOrDefault(0), "1", StringComparison.InvariantCultureIgnoreCase))
+                return mcVersion;
+
+            // For old Minecraft versioning system, NeoForge version is the minor and build Minecraft version numbers
+            // Example : for Minecraft 1.20.4, NeoForge version is 20.4
             string secondaryNumber = mcVersionSplit.ElementAtOrDefault(2);
             if (string.IsNullOrWhiteSpace(secondaryNumber))
                 secondaryNumber = "0";
