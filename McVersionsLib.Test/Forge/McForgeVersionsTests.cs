@@ -1,11 +1,5 @@
 ﻿using McVersionsLib.Core;
 using McVersionsLib.Forge;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace McVersionsLib.Test.Forge
 {
@@ -34,7 +28,7 @@ namespace McVersionsLib.Test.Forge
         [TestMethod]
         public void GetAllMinecraftForgeVersionsTestException1154()
         {
-            Assert.ThrowsException<VersionNotFoundException>(() => McForgeVersions.GetAllMinecraftForgeVersions("1.15.4"));
+            Assert.ThrowsExactly<VersionNotFoundException>(() => McForgeVersions.GetAllMinecraftForgeVersions("1.15.4"));
         }
 
         [TestMethod]
