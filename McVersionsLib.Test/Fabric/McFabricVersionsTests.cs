@@ -1,6 +1,5 @@
 ﻿using McVersionsLib.Core;
 using McVersionsLib.Fabric;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace McVersionsLib.Test.Fabric
 {
@@ -77,10 +76,9 @@ namespace McVersionsLib.Test.Fabric
         }
 
         [TestMethod]
-        [ExpectedException(typeof(VersionNotFoundException))]
         public void GetAllLoaderVersionsSpecificMinecraftVersionTestMinecraftVersionNotFound()
         {
-            McFabricVersions.GetAllLoaderVersions("1.17.5");
+            Assert.ThrowsExactly<VersionNotFoundException>(() => McFabricVersions.GetAllLoaderVersions("1.17.5"));
         }
 
         [TestMethod]
@@ -99,17 +97,15 @@ namespace McVersionsLib.Test.Fabric
 
         #region GetLoaderAndMappingsDetails
         [TestMethod]
-        [ExpectedException(typeof(VersionNotFoundException))]
         public void GetLoaderAndMappingsDetailsTestMinecraftVersionNotFound()
         {
-            McFabricVersions.GetLoaderAndMappingsDetails("1.18.7", "0.14.13");
+            Assert.ThrowsExactly<VersionNotFoundException>(() => McFabricVersions.GetLoaderAndMappingsDetails("1.18.7", "0.14.13"));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(VersionNotFoundException))]
         public void GetLoaderAndMappingsDetailsTestLoaderVersionNotFound()
         {
-            McFabricVersions.GetLoaderAndMappingsDetails("1.19.3", "6.14.13");
+            Assert.ThrowsExactly<VersionNotFoundException>(() => McFabricVersions.GetLoaderAndMappingsDetails("1.19.3", "6.14.13"));
         }
 
         [TestMethod]

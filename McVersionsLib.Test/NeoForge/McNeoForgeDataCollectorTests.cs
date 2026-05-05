@@ -1,12 +1,5 @@
-﻿using McVersionsLib.Forge;
-using McVersionsLib.NeoForge;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using McVersionsLib.NeoForge;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace McVersionsLib.Test.NeoForge
 {
@@ -32,7 +25,7 @@ namespace McVersionsLib.Test.NeoForge
         [TestMethod]
         public void RetrieveNeoForgeLatestVersionDataExceptionTest()
         {
-            Assert.ThrowsException<WebException>(() => McNeoForgeDataCollector.RetrieveNeoForgeLatestVersionData("19.4"));
+            Assert.ThrowsExactly<WebException>(() => McNeoForgeDataCollector.RetrieveNeoForgeLatestVersionData("19.4"));
         }
     }
 }

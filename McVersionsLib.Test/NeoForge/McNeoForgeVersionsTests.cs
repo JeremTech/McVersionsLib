@@ -1,11 +1,5 @@
 ﻿using McVersionsLib.NeoForge;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace McVersionsLib.Test.NeoForge
 {
@@ -35,7 +29,7 @@ namespace McVersionsLib.Test.NeoForge
         [TestMethod]
         public void GetLatestNeoForgeVersionNotExistTest()
         {
-            Assert.ThrowsException<WebException>(() => McNeoForgeVersions.GetLatestNeoForgeVersion("1.19.4"));
+            Assert.ThrowsExactly<WebException>(() => McNeoForgeVersions.GetLatestNeoForgeVersion("1.19.4"));
         }
     }
 }
